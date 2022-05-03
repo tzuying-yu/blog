@@ -1,0 +1,67 @@
+---
+title: "git_command"
+author: "Tzuying Yu"
+date: "01/05/2022"
+categories: ["Terminal", "Github"]
+tags: ["terminal", "github", "command"]
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\definecolor{highlightColor}{HTML}{FFFF66}
+\definecolor{codeboxColor}{HTML}{}
+# Notes of github commands while pushing remote repository to github
+(TODO:Maybe change to some interest topic name)
+## Preamble
+This is a note I wrote back when I tried to push my blogdown project in Rstudio to Github. I didn't have much experience in writing Git commands then. Therefore, this note is more for beginners who might stuck in some steps while first pushing remote repository to github.
+
+## Work flow 
+First of all, create a project with blogdown.
+/> File /> New Project />New Directory /> Website using blogdown, then click create.
+Note: In this step, you have to choose a hugo theme. According to author of the Hugo, it is always the best to start with the default theme. Once you are familiar with the Hugo you can play with different theme.
+(TODO: Hugo in details)
+
+Second, go to the Terminal at the bottom of the interface. And follow the belowing steps. 
+  1. Checking the directory.
+  Example: I want to work in the \textcolor{highlightColor}{blog_website} directory. The first line showing in the terminal should look like,
+  Nicoles-MacBook-Air:\textcolor{highlightColor}{blog_website} nicoleyu$
+  If not, command the following line,
+  `cd <your own working directory>'
+  Notes: cd means change directory in terminal command.
+  
+  - Initializing a new repository.[^1]
+  `git init`
+  This is a one-time command during the initial setup. You only need to do once for each new repository. It creates a new .git subdirectory in your current working directory.
+  
+  -  Set up remote connection with other repositories.
+  `git remote add <remote/name> <URL>`
+  Create a new connection to a remote repository. After adding a remote, you’ll be able to use ＜name＞ as a convenient shortcut for ＜url＞ in other Git commands.[^2]
+  Notes: In most case, we use origin as the name for the first connection but you can always set it with your preferred name. 
+  
+  - Add the files you want to push to the github.
+  `git add .`
+  This add all qualified files in your working directory to the staging area.[^3]
+  
+  - Commit to the changes you made in the last step.
+  `git commit -m <"message you want to made for this command">
+  This command captures a snapshot of the project's currently staged changes.[^4] 
+  - Finally, push the changes to the Githhub.
+  `git push <remote/name> <branch>`
+  You can find the branch in the current_working_directory/.git/ > config file.
+  Often it is either master or main. 
+  
+  - Now you can check the pull request on your Github.And you're done!
+  
+  
+  
+  
+
+***
+
+[^1]:[link](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
+[^2]: [link](https://www.atlassian.com/git/tutorials/syncing)
+[^3]:[link](https://www.atlassian.com/git/tutorials/saving-changes)
+[^4]:[link](https://www.atlassian.com/git/tutorials/saving-changes/git-commit)
