@@ -23,7 +23,7 @@ JavaTpoint <br>
 # You only need to know these basic Git commands to push the local project to Github!
 
 ### Preamble
-This is a note that I wrote back when I tried to push my blogdown project in Rstudio to Github. I didn't have any experience in writing Git commands then. Therefore, this note is more for beginners who might feel stuck while first pushing remote repository to github.
+This is a note that I wrote back when I tried to push my blogdown project in Rstudio to Github. I didn't have any experience in writing Git commands then. Therefore, this note is more for beginners who might feel stuck while first pushing local repository to github's remote repository.
 
 ### Workflow 
 In this setting, I wished to push my blogdown project.So first of all, I will need to create a project with blogdown.[^1]\
@@ -33,42 +33,65 @@ Go to `File > New Project > New Directory > Website` using blogdown, then click 
 Then, go to the Terminal at the bottom of the interface. And follow the below steps.\
 
 #### Step 1: Checking the directory.
-* Code: `git init`
-* Example: I want to work in the <font color="blue">blog_website</font> directory. The first line showing in the terminal should look like,\
+* Checking the directory you are working with is the preliminary step, it decides the files you are able to push to Github.
+* Example: I want to push the whole <font color="blue">blog_website</font> directory. The first line showing in the terminal should look like,\
 `Nicoles-MacBook-Air:<font color="blue">blog_website</font> nicoleyu$`
 If not, command the following line,\
 `cd <your own working directory>`\
-\* Notes: `cd` means change directory in terminal command.
-  
-  - Initializing a new repository.[^1]
-  This is a one-time command during the initial setup. You only need to do once for each new repository. It creates a new .git subdirectory in your current working directory.
-  
-  -  Set up remote connection with other repositories.
-  `git remote add <remote/name> <URL>`
-  Create a new connection to a remote repository. After adding a remote, you’ll be able to use ＜name＞ as a convenient shortcut for ＜url＞ in other Git commands.[^2]
-  Notes: In most case, we use origin as the name for the first connection but you can always set it with your preferred name. 
-  
-  - Add the files you want to push to the github.
-  `git add .`
-  This add all qualified files in your working directory to the staging area.[^3]
-  
-  - Commit to the changes you made in the last step.
-  `git commit -m <"message you want to made for this command">
-  This command captures a snapshot of the project's currently staged changes.[^4] 
-  - Finally, push the changes to the Githhub.
-  `git push <remote/name> <branch>`
-  You can find the branch in the current_working_directory/.git/ > config file.
-  Often it is either master or main. 
-  
-  - Now you can check the pull request on your Github.And you're done!
-  
-  
+\
+\* Notes: `cd` means "change directory" in terminal command.
 
+#### Step 2:  Initializing a new repository.
+* Code:`git init` 
+* This is a one-time command during the initial setup. You only need to do this once for each new repository. It creates a new ".git" subdirectory in your current working directory you set in the first place. [^2]
 
+#### Step 3: Set up remote connection with other repositories.
+* Code: `git remote add <local repository's name> <github project's URL>`
+* This is also an one-time command,and it creates a new connection with the remote repository. After setting up the connection, you’ll be able to call <local repository's name> as a convenient shortcut for <github project's URL> in other Git commands.[^3]
+\*Notes: In most case, we use `origin` as the name for the first connection but you can always set it with your preferred name. 
+  
+#### Step 4: Add the files you want to push to the github.
+* Code: `git add .`
+* This save the current version of all qualified files, which have never been pushed or have been changed in your working directory, to the staging area.[^4] The staging area is like a rough draft space where stores files you want to push in your next commit. 
+
+#### Step 5: Commit to the changes you made in the last step.
+* Code: `git commit -m <"message you want to made for this command">
+* This command captures a snapshot of the project's currently staged changes.And also you can add messages to your current change.[^4] 
+\*Notes: The option `-m` means "message".
+
+#### Step 6: Finally, push the changes to the Githhub.
+* Code: `git push <remote repository's name> <branch>`
+* This command pushes the local branch to the Github's remote repository.    
+\*Notes: You can find the branch in the current_working_directory/.git/ > config file. \
+\
+Now you can check the pull request on your Github.And you're done!
+
+### Code summary:
+```{}
+# Summary of the workflow:
+cd <working directory>
+git init
+git remote add <local repo name> <github project url>
+git add .
+git commit -m <messages>
+git push <local repo name> <branch>
+
+#Some useful checking tool
+## Listing the files in the terminal 
+ls 
+## Showing the state of the working directory and the staging area
+git status
+
+```
+  
+  
+[TODO]
+- how to undo each step
+- working directory -> commit  -> local repo (master) -> central repo (main)
 
 ***
 [^1]: [Yihui(Blogdown,2021)](https://bookdown.org/yihui/blogdown/a-quick-example.html#create-project)
-[^2]:[link](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
-[^2]: [link](https://www.atlassian.com/git/tutorials/syncing)
-[^3]:[link](https://www.atlassian.com/git/tutorials/saving-changes)
-[^4]:[link](https://www.atlassian.com/git/tutorials/saving-changes/git-commit)
+[^2]:[Atlassian](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
+[^3]: [Atlassian](https://www.atlassian.com/git/tutorials/syncing)
+[^4]:[Atlassian](https://www.atlassian.com/git/tutorials/saving-changes)
+[^5]:[Atlassian](https://www.atlassian.com/git/tutorials/saving-changes/git-commit)
