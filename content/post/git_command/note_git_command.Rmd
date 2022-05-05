@@ -1,9 +1,14 @@
 ---
-title: "git_command"
-author: "Tzuying Yu"
-date: "01/05/2022"
-categories: ["Terminal", "Github"]
-tags: ["terminal", "github", "command"]
+title: git_command
+author: Tzuying Yu
+date: '2022-05-01'
+categories:
+  - Github
+  - Terminal
+tags:
+  - command
+  - github
+  - terminal
 output: html_document
 ---
 
@@ -11,29 +16,31 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-\definecolor{highlightColor}{HTML}{FFFF66}
-\definecolor{codeboxColor}{HTML}{}
-# Notes of github commands while pushing remote repository to github
-(TODO:Maybe change to some interest topic name)
-## Preamble
-This is a note I wrote back when I tried to push my blogdown project in Rstudio to Github. I didn't have much experience in writing Git commands then. Therefore, this note is more for beginners who might stuck in some steps while first pushing remote repository to github.
+<font color="blue">  
+JavaTpoint <br>  
+</font> 
 
-## Work flow 
-First of all, create a project with blogdown.
-/> File /> New Project />New Directory /> Website using blogdown, then click create.
-Note: In this step, you have to choose a hugo theme. According to author of the Hugo, it is always the best to start with the default theme. Once you are familiar with the Hugo you can play with different theme.
-(TODO: Hugo in details)
+# You only need to know these basic Git commands to push the local project to Github!
 
-Second, go to the Terminal at the bottom of the interface. And follow the belowing steps. 
-  1. Checking the directory.
-  Example: I want to work in the \textcolor{highlightColor}{blog_website} directory. The first line showing in the terminal should look like,
-  Nicoles-MacBook-Air:\textcolor{highlightColor}{blog_website} nicoleyu$
-  If not, command the following line,
-  `cd <your own working directory>'
-  Notes: cd means change directory in terminal command.
+### Preamble
+This is a note that I wrote back when I tried to push my blogdown project in Rstudio to Github. I didn't have any experience in writing Git commands then. Therefore, this note is more for beginners who might feel stuck while first pushing remote repository to github.
+
+### Workflow 
+In this setting, I wished to push my blogdown project.So first of all, I will need to create a project with blogdown.[^1]\
+Go to `File > New Project > New Directory > Website` using blogdown, then click create.\
+\*Note: In this step, you have to choose a Hugo theme. According to author of the blogdown, it is always the best to start with the default theme. Once you are familiar with the Hugo you can play with different theme.\
+
+Then, go to the Terminal at the bottom of the interface. And follow the below steps.\
+
+#### Step 1: Checking the directory.
+* Code: `git init`
+* Example: I want to work in the <font color="blue">blog_website</font> directory. The first line showing in the terminal should look like,\
+`Nicoles-MacBook-Air:<font color="blue">blog_website</font> nicoleyu$`
+If not, command the following line,\
+`cd <your own working directory>`\
+\* Notes: `cd` means change directory in terminal command.
   
   - Initializing a new repository.[^1]
-  `git init`
   This is a one-time command during the initial setup. You only need to do once for each new repository. It creates a new .git subdirectory in your current working directory.
   
   -  Set up remote connection with other repositories.
@@ -56,12 +63,12 @@ Second, go to the Terminal at the bottom of the interface. And follow the belowi
   - Now you can check the pull request on your Github.And you're done!
   
   
-  
-  
+
+
 
 ***
-
-[^1]:[link](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
+[^1]: [Yihui(Blogdown,2021)](https://bookdown.org/yihui/blogdown/a-quick-example.html#create-project)
+[^2]:[link](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
 [^2]: [link](https://www.atlassian.com/git/tutorials/syncing)
 [^3]:[link](https://www.atlassian.com/git/tutorials/saving-changes)
 [^4]:[link](https://www.atlassian.com/git/tutorials/saving-changes/git-commit)
